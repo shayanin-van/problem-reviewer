@@ -98,9 +98,9 @@ export function splitByInclinedPlaneJson(inputString) {
   // generate key for each element
   for (let i = 0; i < result.length; i++) {
     if (typeof result[i] === "string") {
-      result[i] = { type: "text", order: i, text: result[i] };
+      result[i] = { type: "text", text: result[i] };
     } else if (typeof result[i] === "object") {
-      result[i] = { type: "jsonObj", order: i, jsonObj: result[i] };
+      result[i] = { type: "jsonObj", jsonObj: result[i] };
     }
   }
 

@@ -9,11 +9,11 @@ function Preview({ problem }) {
   }, [problem]);
 
   const splittedQuestion = splitByInclinedPlaneJson(problem.question);
-  const question = splittedQuestion.map((item) => {
+  const question = splittedQuestion.map((item, index) => {
     if (item.type === "text") {
-      return <p key={item.order}>{item.text}</p>;
+      return <p key={index}>{item.text}</p>;
     } else if (item.type === "jsonObj") {
-      return <Diagram key={item.order} paramJson={item.jsonObj}></Diagram>;
+      return <Diagram key={index} paramJson={item.jsonObj}></Diagram>;
     }
   });
 
