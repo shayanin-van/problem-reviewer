@@ -4,6 +4,7 @@ import Preview from "./components/Preview/Preview";
 import Editor from "./components/Editor/Editor";
 
 function App() {
+  const [problem, setProblem] = useState({
     question: "test",
     choices: ["a", "b", "c", "d"],
     answer: 3,
