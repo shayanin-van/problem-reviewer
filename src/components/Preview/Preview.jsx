@@ -3,12 +3,12 @@ import { useEffect } from "react";
 import { splitByInclinedPlaneJson } from "../../tools/utils/splitByInclinedPlaneJson";
 import Diagram from "./Diagram/Diagram";
 
-function Preview({ questionValue }) {
+function Preview({ problem }) {
   useEffect(() => {
     MathJax.typeset();
-  }, [questionValue]);
+  }, [problem]);
 
-  const splittedQuestion = splitByInclinedPlaneJson(questionValue);
+  const splittedQuestion = splitByInclinedPlaneJson(problem.question);
   const question = splittedQuestion.map((item) => {
     if (item.type === "text") {
       return <p key={item.order}>{item.text}</p>;

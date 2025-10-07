@@ -30,6 +30,17 @@ textarea {
   width: 100%;
   resize: none;
   border-radius: 8px;
+  border: 1px solid rgb(158, 158, 158);
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 5px;
+}
+
+input[type="number"] {
+  background-color: #fafafa;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgb(158, 158, 158);
   box-sizing: border-box;
   padding: 10px;
   margin: 5px;
