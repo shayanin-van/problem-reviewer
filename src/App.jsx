@@ -5,10 +5,10 @@ import Editor from "./components/Editor/Editor";
 
 function App() {
   const [problem, setProblem] = useState({
-    question: "test",
+    question: "โจจจจจจจจจจจจจจจทย์",
     choices: ["a", "b", "c", "d"],
     answer: 3,
-    solution: "test",
+    solution: "เฉลยยยยยยยยยยยยยยยยยย",
   });
 
   const handleQuestionChange = (e) => {
