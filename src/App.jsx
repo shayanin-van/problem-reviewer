@@ -7,6 +7,7 @@ function App() {
   const [problem, setProblem] = useState({
     question: "โจจจจจจจจจจจจจจจทย์",
     choices: ["a", "b", "c", "d"],
+    hint: "ใบบบบบบบบบบบบบบบบบบ้",
     answer: 3,
     solution: "เฉลยยยยยยยยยยยยยยยยยย",
   });
@@ -21,6 +22,10 @@ function App() {
     newChoices[index] = e.target.value;
 
     setProblem((prevProblem) => ({ ...prevProblem, choices: newChoices }));
+  };
+
+  const handleHintChange = (e) => {
+    setProblem((prevProblem) => ({ ...prevProblem, hint: e.target.value }));
   };
 
   const handleAnswerChange = (e) => {
@@ -42,6 +47,7 @@ function App() {
           problem={problem}
           onQuestionChange={handleQuestionChange}
           onChoicesChange={handleChoicesChange}
+          onHintChange={handleHintChange}
           onAnswerChange={handleAnswerChange}
           onSolutionChange={handleSolutionChange}
         ></Editor>

@@ -35,7 +35,9 @@ function Preview({ problem }) {
     choices.push(<p key={i}>{i + 1 + ". " + problem.choices[i]}</p>);
   }
 
-  const answer = <p>เฉลยหยาบ : {problem.answer}</p>;
+  const hint = <p>{"คำใบ้ : " + problem.hint}</p>;
+
+  const answer = <p>{"เฉลยหยาบ : " + problem.answer}</p>;
 
   const splittedSolution = splitByInclinedPlaneJson(problem.solution);
   const solution = splittedSolution.map((item, index) => {
@@ -50,6 +52,7 @@ function Preview({ problem }) {
     <div className={styles.preview}>
       {question}
       {choices}
+      {hint}
       {answer}
       {solution}
     </div>

@@ -6,6 +6,7 @@ function Editor({
   onChoicesChange,
   onAnswerChange,
   onSolutionChange,
+  onHintChange,
 }) {
   const choices = problem.choices.map((choice, index) => {
     return (
@@ -29,6 +30,8 @@ function Editor({
       />
       <h3 style={{ margin: "10px 0px 6px 0px" }}>ตัวเลือก</h3>
       {choices}
+      <h3 style={{ margin: "10px 0px 6px 0px" }}>คำใบ้</h3>
+      <textarea value={problem.hint} onChange={onHintChange} rows="2" />
       <h3 style={{ margin: "10px 0px 6px 0px" }}>ตัวเลือกที่ถูก</h3>
       <input
         type="number"
