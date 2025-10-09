@@ -1,4 +1,5 @@
 import styles from "./Editor.module.css";
+import { useState } from "react";
 
 function Editor({
   problem,
@@ -7,7 +8,22 @@ function Editor({
   onAnswerChange,
   onSolutionChange,
   onHintChange,
+  onReviewStatusChange,
 }) {
+  const [lastSavedProblem, setlastSavedProblem] = useState(problem);
+
+  const saveButton = () => {
+    if (problem === lastSavedProblem) {
+      return <button disabled>save</button>;
+    } else {
+      return <button onClick={handleSave}>save</button>;
+    }
+  };
+
+  const handleSave = () => {
+    setlastSavedProblem(problem);
+  };
+
   const choices = problem.choices.map((choice, index) => {
     return (
       <textarea
@@ -26,12 +42,12 @@ function Editor({
       <textarea
         value={problem.question}
         onChange={onQuestionChange}
-        rows="10"
+        rows="12"
       />
       <h3 style={{ margin: "10px 0px 6px 0px" }}>ตัวเลือก</h3>
       {choices}
       <h3 style={{ margin: "10px 0px 6px 0px" }}>คำใบ้</h3>
-      <textarea value={problem.hint} onChange={onHintChange} rows="2" />
+      <textarea value={problem.hint} onChange={onHintChange} rows="3" />
       <h3 style={{ margin: "10px 0px 6px 0px" }}>ตัวเลือกที่ถูก</h3>
       <input
         type="number"
@@ -44,8 +60,19 @@ function Editor({
       <textarea
         value={problem.solution}
         onChange={onSolutionChange}
-        rows="16"
+        rows="20"
       />
+      <div style={{ margin: "10px 0px 6px 0px" }}>
+        <label>
+          <input
+            type="checkbox"
+            checked={problem.isReviewed}
+            onChange={onReviewStatusChange}
+          />
+          ตรวจแล้ว
+        </label>
+        {saveButton()}
+      </div>
     </div>
   );
 }

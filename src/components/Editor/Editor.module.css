@@ -15,7 +15,7 @@
 
 @media (orientation: landscape) {
   .editor {
-    width: 40%;
+    width: 34%;
   }
 }
 
@@ -44,4 +44,11 @@ input[type="number"] {
   box-sizing: border-box;
   padding: 10px;
   margin: 5px;
+}
+
+input[type="checkbox"] {
+  scale: 1.2;
+  margin: 8px;
+  accent-color: rgb(4, 219, 4);
+  vertical-align: middle;
 }

@@ -10,6 +10,7 @@ function App() {
     hint: "ใบบบบบบบบบบบบบบบบบบ้",
     answer: 3,
     solution: "เฉลยยยยยยยยยยยยยยยยยย",
+    isReviewed: false,
   });
 
   const handleQuestionChange = (e) => {
@@ -39,6 +40,13 @@ function App() {
     setProblem((prevProblem) => ({ ...prevProblem, solution: e.target.value }));
   };
 
+  const handleReviewStatusChange = () => {
+    setProblem((prevProblem) => ({
+      ...prevProblem,
+      isReviewed: !prevProblem.isReviewed,
+    }));
+  };
+
   return (
     <>
       <h1>Problems Reviewer</h1>
@@ -50,6 +58,7 @@ function App() {
           onHintChange={handleHintChange}
           onAnswerChange={handleAnswerChange}
           onSolutionChange={handleSolutionChange}
+          onReviewStatusChange={handleReviewStatusChange}
         ></Editor>
         <Preview problem={problem}></Preview>
       </div>
