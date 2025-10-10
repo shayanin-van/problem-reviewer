@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Preview from "./components/Preview/Preview";
 import Editor from "./components/Editor/Editor";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   const [problem, setProblem] = useState({
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      <Sidebar></Sidebar>
       <h1>Problems Reviewer</h1>
       <div className="workArea">
         <Editor

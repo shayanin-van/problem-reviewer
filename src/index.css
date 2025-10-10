@@ -33,7 +33,7 @@ button {
   color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin: 15px;
+  margin: 12px;
 }
 button:hover {
   border-color: #ffffff;

@@ -19,19 +19,6 @@ function Preview({ problem }) {
 
   const choices = [];
   for (let i = 0; i < problem.choices.length; i++) {
-    /////////////// Support Diagram in Choices ---------------------------------------
-    // const splittedChoices = splitByInclinedPlaneJson(problem.choices[i]);
-    // choices.push(
-    //   splittedChoices.map((item, index) => {
-    //     if (item.type === "text") {
-    //       return <p key={index}>{i + 1 + ". " + item.text}</p>;
-    //     } else if (item.type === "jsonObj") {
-    //       return <Diagram key={index} paramJson={item.jsonObj}></Diagram>;
-    //     }
-    //   })
-    // );
-
-    /////////////// Not Support Diagram in Choices ---------------------------------------
     choices.push(<p key={i}>{i + 1 + ". " + problem.choices[i]}</p>);
   }
 
