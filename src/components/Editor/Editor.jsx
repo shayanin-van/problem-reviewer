@@ -42,7 +42,7 @@ function Editor({
       <textarea
         value={problem.question}
         onChange={onQuestionChange}
-        rows="12"
+        rows="10"
       />
       <h3 style={{ margin: "10px 0px 6px 0px" }}>ตัวเลือก</h3>
       {choices}
@@ -53,14 +53,14 @@ function Editor({
         type="number"
         min={1}
         max={problem.choices.length}
-        value={problem.answer}
+        value={problem.answer + 1}
         onChange={onAnswerChange}
       ></input>
       <h3 style={{ margin: "10px 0px 6px 0px" }}>เฉลยละเอียด</h3>
       <textarea
         value={problem.solution}
         onChange={onSolutionChange}
-        rows="20"
+        rows="22"
       />
       <div style={{ margin: "10px 0px 6px 0px" }}>
         <label>

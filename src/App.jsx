@@ -32,7 +32,7 @@ function App() {
   const handleAnswerChange = (e) => {
     setProblem((prevProblem) => ({
       ...prevProblem,
-      answer: parseInt(e.target.value, 10),
+      answer: parseInt(e.target.value - 1, 10),
     }));
   };
 

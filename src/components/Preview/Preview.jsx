@@ -37,7 +37,8 @@ function Preview({ problem }) {
 
   const hint = <p>{"คำใบ้ : " + problem.hint}</p>;
 
-  const answer = <p>{"เฉลยหยาบ : " + problem.answer}</p>;
+  const answerNum = problem.answer + 1;
+  const answer = <p>{"เฉลยหยาบ : " + answerNum}</p>;
 
   const splittedSolution = splitByInclinedPlaneJson(problem.solution);
   const solution = splittedSolution.map((item, index) => {
